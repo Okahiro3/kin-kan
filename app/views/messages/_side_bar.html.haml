@@ -1,0 +1,26 @@
+.side-bar
+  .user-box
+    .top-items
+      %p.top-items__name
+        masa
+      %ul.top-items__box-menu
+        %li.top-items__group-edit
+          = link_to "###", class:"group-edit" do
+            = icon('far', 'edit')
+        %li.top-items__config
+          = link_to "###", class:"config" do
+            = icon('fa', 'cog')
+  .group-list
+    .group
+      %p.group__date
+        日付 2020/07/06
+      %p.group__start-time
+        始業時刻 9:00 
+      %p.group__end-time
+        終業時刻 18:00
+      %p.group__remark
+        備考
+      %ul.group__approval
+        各種申請
+        %li.group__paid
+          有給申請

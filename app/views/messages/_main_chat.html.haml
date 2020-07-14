@@ -1,0 +1,11 @@
+.main-chat
+  .group-info
+    .group-info__group-box
+      %h2.group-info__group-box__group-name
+        2020/7/6 (月)
+    .group-info__edit
+      = link_to "###", class:"edit" do
+        edit
+  .message-list
+    = month_calendar do |date|
+      = date
