@@ -2,10 +2,23 @@
   .group-info
     .group-info__group-box
       %h2.group-info__group-box__group-name
-        2020/7/6 (月)
+        = @group.name
+      %ul.group-info__group-box__group-name__member-list
+        Member:
+        - @group.users.each do |user|
+          = user.name
     .group-info__edit
-      = link_to "###", class:"edit" do
-        edit
+      = link_to edit_group_path(@group.id) do
+        Edit
   .message-list
-    = month_calendar do |date|
-      = date
+    - @messages.each do |message|
+      = render message
+  .message-form
+    = form_for [@group, @message] do |f|
+      .new-message
+        .input-box
+          = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+          = f.label :image, class: 'input-box__image' do
+            = icon('fas', 'image')
+          = f.file_field :image, class: 'input-box__image__file'
+        = f.submit 'Send', class: 'submit-btn'

@@ -3,17 +3,19 @@
 }
 
 .wrapper{
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
 }
 
 .side-bar {
+  overflow: scroll;
   float: left;
   width: 300px;
-  height: 100%;
+  height: 100vh;
 }
 
 .user-box {
+  overflow: scroll;
   background-color: #253141;
   height: 100px;
   align-items: center;
@@ -52,6 +54,7 @@
   }
 }
 .group-list {
+  overflow: scroll;
   background-color: #2f3e51;
   height: calc(100vh - 100px);
   padding: 20px 20px 0;
@@ -59,30 +62,18 @@
 
 .group{
   margin-bottom: 40px;
-  &__date{
+  a{
+    color: white;
+    text-decoration: none;
+
+  }
+  &__name{
     margin-bottom: 5px;
-    color: white;
-    font-size: 30px;
+    font-size: 15px;
   }
-  &__start-time{
+  &__message{
     color: white;
-    font-size: 25px;
-  }
-  &__end-time{
-    color: white;
-    font-size: 25px;
-  }
-  &__remark{
-    color: white;
-    font-size: 20px;
-  }
-  ul{
-    color: white;
-    font-size: 25px;
-    li{
-      color: white;
-      font-size: 20px;
-    }
+    font-size: 11px;
   }
 }
 
@@ -93,6 +84,7 @@
 }
 
 .group-info{
+    overflow: scroll;
     padding: 0 40px;
     display: flex;
     background-color: #ffffff;
@@ -117,17 +109,20 @@
       display: flex;
       justify-content: flex-end;
       font-size: 16px;
-      border: solid 1px #38aef0;
       line-height: 40px;
       padding: 0 20px;
       a{
+        padding: 0 20px;
+        align-items: center;
         text-decoration: none;
         color: #38aef0;
+        border: solid 1px #38aef0;
       }
     }
 }
 
 .message-list{
+  overflow: scroll;
   background-color: #fafafa;
   height: calc(100vh - 100px - 90px);
   padding: 35px 40px;
@@ -148,9 +143,11 @@
     }
   }
   &__text{
-  color: #434A54;
-  font-size: 14px;
-  margin-bottom: 46px;
+    &__content{
+      color: #434A54;
+      font-size: 14px;
+      margin-bottom: 46px;
+    }
   }
 }
 .message-form{
@@ -193,3 +190,4 @@
     }
   }
 }
+

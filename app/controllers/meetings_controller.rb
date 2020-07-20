@@ -19,6 +19,7 @@ class MeetingsController < ApplicationController
 
   # GET /meetings/1/edit
   def edit
+    @meeting = Metting.find(params[:id])
   end
 
   # POST /meetings
